@@ -1,0 +1,13 @@
+#!/bin/bash
+# DeskPad Fold 방향 전환 — 메뉴바의 가로/세로와 같다(폰 연결 유지). 세부 명령은 deskpad-ctl.
+#   deskpad-rotate portrait | landscape | status
+HERE="$(cd "$(dirname "$0")" && pwd)"
+STATUS="$HOME/Library/Application Support/DeskPad Fold/status.json"
+case "${1:-status}" in
+  portrait|landscape) exec "$HERE/deskpad-ctl" "$1" ;;
+  status)
+    pgrep -qx "DeskPad Fold" || { echo "DeskPad Fold 꺼져 있음"; exit 0; }
+    echo "방향: $([ "$(defaults read com.joonlab.DeskPadFold portrait 2>/dev/null)" = 1 ] && echo 세로 || echo 가로)"
+    [ -f "$STATUS" ] && python3 -c 'import json,sys; s=json.load(open(sys.argv[1])); print("해상도:", s.get("modeTitle",""))' "$STATUS" ;;
+  *) sed -n '2,3p' "$0"; exit 1 ;;
+esac

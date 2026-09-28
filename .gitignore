@@ -1,0 +1,21 @@
+# Xcode / SwiftPM
+build/
+DerivedData/
+BuildTools/.build
+BuildTools/.swiftpm
+xcuserdata/
+*.xcuserstate
+
+# Raycast extension
+raycast/node_modules/
+raycast/dist/
+raycast/dev-launchd.log
+
+# 개인 설정·로그·분석 산출물 (공개하지 않음)
+config.env
+*.log
+_deskreen_src/
+*.asar
+__pycache__/
+.DS_Store
+_trash/

@@ -1,0 +1,10 @@
+#!/bin/bash
+# DeskPad Fold 메뉴바 앱에 명령을 보낸다 (메뉴와 같은 동작).
+#   deskpad-ctl arm         # 폰 연결: 링크 복사 + 3분간 자동 수락
+#   deskpad-ctl copy        # 링크만 복사
+#   deskpad-ctl disconnect  # 연결 끊기
+#   deskpad-ctl portrait | landscape   # 방향 전환 (연결 유지)
+#   deskpad-ctl mode:924x1224@2        # 해상도 지정 · status · quit
+case "${1:-}" in arm|copy|disconnect|portrait|landscape|status|quit|mode:*) ;; *) sed -n '2,7p' "$0"; exit 1;; esac
+pgrep -qx "DeskPad Fold" || { echo "DeskPad Fold 가 꺼져 있음"; exit 1; }
+osascript -l JavaScript -e "ObjC.import('Foundation'); \$.NSDistributedNotificationCenter.defaultCenter.postNotificationNameObjectUserInfoDeliverImmediately('com.joonlab.DeskPadFold.command', '$1', \$(), true)" >/dev/null

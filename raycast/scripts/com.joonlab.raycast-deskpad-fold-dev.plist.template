@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- install-dev-agent.sh 가 __NODE__ / __EXT_DIR__ / __HOME__ 를 채워 ~/Library/LaunchAgents 에 설치한다. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.joonlab.raycast-deskpad-fold-dev</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__NODE__</string>
+    <string>__EXT_DIR__/node_modules/@raycast/api/bin/run.js</string>
+    <string>develop</string>
+  </array>
+  <key>WorkingDirectory</key><string>__EXT_DIR__</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key><string>__HOME__</string>
+    <key>RAY_Target</key><string>x</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>15</integer>
+  <key>ProcessType</key><string>Background</string>
+  <key>StandardOutPath</key><string>__EXT_DIR__/dev-launchd.log</string>
+  <key>StandardErrorPath</key><string>__EXT_DIR__/dev-launchd.log</string>
+</dict>
+</plist>

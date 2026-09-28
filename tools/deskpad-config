@@ -1,0 +1,20 @@
+#!/bin/bash
+# config.env 의 값을 DeskPad Fold 앱 설정(defaults)에 반영한다. 앱을 다시 켜야 적용된다.
+#   deskpad-config [config.env]      # 기본: 레포 루트의 config.env
+#   deskpad-config --reset           # 전부 기본값으로
+set -u
+DOMAIN=com.joonlab.DeskPadFold
+HERE="$(cd "$(dirname "$0")" && pwd)"
+if [ "${1:-}" = "--reset" ]; then
+  for k in deskreenDebugPort deskreenAppPath streamScale; do defaults delete "$DOMAIN" "$k" 2>/dev/null; done
+  echo "기본값으로 되돌림"; exit 0
+fi
+FILE="${1:-$HERE/../config.env}"
+[ -f "$FILE" ] || { echo "설정 파일 없음: $FILE (config.example.env 를 복사하세요)"; exit 1; }
+# shellcheck disable=SC1090
+. "$FILE"
+[ -n "${DESKREEN_DEBUG_PORT:-}" ] && defaults write "$DOMAIN" deskreenDebugPort -int "$DESKREEN_DEBUG_PORT"
+[ -n "${DESKREEN_APP_PATH:-}" ] && defaults write "$DOMAIN" deskreenAppPath "$DESKREEN_APP_PATH"
+[ -n "${DESKPAD_STREAM_SCALE:-}" ] && defaults write "$DOMAIN" streamScale -float "$DESKPAD_STREAM_SCALE"
+defaults read "$DOMAIN" 2>/dev/null | grep -E 'deskreen|streamScale'
+echo "반영했습니다. DeskPad Fold 를 다시 켜 주세요."

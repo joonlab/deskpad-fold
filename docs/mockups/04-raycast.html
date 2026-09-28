@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="shot" content="w=1600,h=1000,scale=2">
+<title>Raycast 확장</title>
+<link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
+<script src="https://mockup-kit.invalid/kit.js"></script>
+<style>
+  .head { position: absolute; left: 70px; top: 50px; }
+  .row2 { position: absolute; left: 70px; right: 70px; top: 200px; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  .launcher { border-radius: 16px; border: 1px solid var(--mac-border); background: var(--mac-menu); box-shadow: var(--shadow-float); overflow: hidden; color: var(--mac-text); }
+  .l-search { height: 64px; padding: 0 20px; display: flex; align-items: center; gap: 12px; font-size: 20px; border-bottom: 1px solid var(--mac-border); }
+  .l-search .i { color: var(--mac-dim); }
+  .l-search .caret { width: 2px; height: 24px; background: var(--mac-hl); margin-left: -8px; }
+  .l-sec { padding: 12px 20px 6px; font-size: 12.5px; font-weight: 600; color: var(--mac-dim); }
+  .l-item { margin: 0 8px; height: 50px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; gap: 12px; font-size: 15px; }
+  .l-item .ic { width: 30px; height: 30px; border-radius: 8px; background: #2F3A4E; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 17px; flex: none; }
+  .l-item .s { color: var(--mac-dim); font-size: 13.5px; }
+  .l-item .k { margin-left: auto; color: var(--mac-dim); font-size: 12.5px; }
+  .l-item.on { background: light-dark(rgba(0,0,0,.07), rgba(255,255,255,.09)); }
+  .l-foot { height: 44px; margin-top: 10px; padding: 0 16px; border-top: 1px solid var(--mac-border); display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--mac-dim); }
+  .l-foot .r { margin-left: auto; color: var(--mac-text); }
+  .kb { padding: 1px 6px; border-radius: 5px; background: light-dark(rgba(0,0,0,.07), rgba(255,255,255,.1)); font-size: 12px; }
+  .hud { margin: 28px auto 0; width: max-content; padding: 10px 18px; border-radius: 12px; background: rgba(30,30,32,.88); color: #fff; font-size: 14px; display: flex; gap: 8px; align-items: center; }
+  .caption2 { margin-top: 12px; text-align: center; font-size: 15px; font-weight: 600; color: var(--mac-dim); }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="head">
+    <div class="canvas-title">Raycast에서 「폴드」만 쳐도</div>
+    <div class="canvas-sub">명령 3개 · 앱이 꺼져 있으면 먼저 켭니다 · 앱과는 status.json + 알림 채널로 통신</div>
+  </div>
+  <div class="row2">
+    <div>
+      <div class="launcher">
+        <div class="l-search"><i data-icon="search"></i>폴드<span class="caret"></span></div>
+        <div class="l-sec">명령</div>
+        <div class="l-item on"><span class="ic"><i data-icon="monitor"></i></span>DeskPad Fold<span class="s">보조모니터</span><span class="k">명령</span></div>
+        <div class="l-item"><span class="ic"><i data-icon="link"></i></span>DeskPad 폰 연결<span class="s">DeskPad Fold</span><span class="k">명령</span></div>
+        <div class="l-item"><span class="ic"><i data-icon="rotate"></i></span>DeskPad 가로/세로 전환<span class="s">DeskPad Fold</span><span class="k">명령</span></div>
+        <div class="l-foot">검색 결과 3개<span class="r">열기 <span class="kb">↵</span></span></div>
+      </div>
+      <div class="hud"><i data-icon="clipboard"></i>링크 복사됨 — 3분 안에 폰에서 여세요</div>
+      <div class="hud" style="margin-top:12px"><i data-icon="rotate"></i>세로 · 924 × 1224&nbsp; 선명 · 폴드 1:1</div>
+      <div class="caption2">no-view 명령은 HUD 한 줄로 끝납니다</div>
+    </div>
+    <div>
+      <div class="launcher">
+        <div class="l-search"><i data-icon="chevron-left"></i>DeskPad Fold</div>
+        <div class="l-sec">상태</div>
+        <div class="l-item on"><span class="ic" style="background:#1E8E5A"><i data-icon="smartphone"></i></span>연결됨<span class="s">Android 브라우저</span><span class="k">세로 · 924 × 1224</span></div>
+        <div class="l-item"><span class="ic"><i data-icon="link"></i></span>폰 다시 연결<span class="s">새 링크 + 자동 수락</span></div>
+        <div class="l-item"><span class="ic"><i data-icon="rotate"></i></span>가로로 전환<span class="s">연결 유지</span></div>
+        <div class="l-item"><span class="ic"><i data-icon="copy"></i></span>링크만 복사</div>
+        <div class="l-item"><span class="ic"><i data-icon="x"></i></span>연결 끊기</div>
+        <div class="l-sec">해상도</div>
+        <div class="l-item"><span class="ic"><i data-icon="check"></i></span>924 × 1224 선명 · 폴드 1:1</div>
+        <div class="l-item"><span class="ic" style="background:#8A93A3"><i data-icon="monitor"></i></span>768 × 1024 선명 · 폴드 비율</div>
+        <div class="l-foot">DeskPad Fold<span class="r">실행 <span class="kb">↵</span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

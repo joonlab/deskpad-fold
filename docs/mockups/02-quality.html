@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="shot" content="w=1600,h=1000,scale=2">
+<title>세로 화질 보정</title>
+<link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
+<script src="https://mockup-kit.invalid/kit.js"></script>
+<style>
+  .wrap { position: absolute; inset: 0; padding: 56px 70px; display: flex; flex-direction: column; gap: 26px; }
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .col { display: flex; flex-direction: column; gap: 12px; }
+  .panel { height: 360px; border-radius: 18px; border: 1px solid var(--border); background: #EEF1F5; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .doc { width: 230px; height: 300px; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.12); padding: 18px 16px; font-size: 13px; line-height: 21px; color: #1D1D1F; }
+  .doc h4 { margin: 0 0 8px; font-size: 16px; }
+  .blur .doc { filter: blur(1.6px); image-rendering: pixelated; }
+  .tags { display:flex; gap:8px; justify-content: space-between; }
+  .col .card-title { font-size: 18px; }
+  .col .meta { font-size: 14px; line-height: 21px; }
+  
+  .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; flex: 1; min-height: 0; }
+  .terminal { height: 100%; }
+  .expl { font-size: 15px; line-height: 25px; }
+  .expl code { font-family: var(--mono); font-size: 13px; background: var(--panel2); padding: 1px 6px; border-radius: 5px; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="wrap">
+    <div>
+      <div class="canvas-title">세로로 돌리면 흐려지던 원인과 75% 재적용</div>
+      <div class="canvas-sub">폴드8 세로 화면 1848 × 2448 기준 · 폰에 보내는 스트림 해상도</div>
+    </div>
+    <div class="cols">
+      <div class="col">
+        <div class="panel blur"><div class="doc"><h4>회의 메모</h4>1. 발표 순서 정하기<br>2. 자료 마감은 목요일 저녁<br>3. 다음 회의 장소 예약<br>4. 장보기 목록 정리</div></div>
+        <div class="tags"><span class="tag danger">452 × 600</span><span class="tag danger">폰에서 4배 확대 · 흐림</span></div>
+        <div class="card-title">보정 전 · 흐림</div>
+        <div class="meta">Deskreen은 연결 순간의 <b>포인트</b> 크기(가로 800 × 600)를 캡처 상한으로 고정합니다. 세로로 돌리면 그 상자에 맞춰 452 × 600으로 보냅니다.</div>
+      </div>
+      <div class="col">
+        <div class="panel"><div class="doc"><h4>회의 메모</h4>1. 발표 순서 정하기<br>2. 자료 마감은 목요일 저녁<br>3. 다음 회의 장소 예약<br>4. 장보기 목록 정리</div></div>
+        <div class="tags"><span class="tag warn">1848 × 2448 · 100%</span><span class="tag warn">커서 딜레이 · 끊김</span></div>
+        <div class="card-title">실제 픽셀 100% · 선명하지만 끊김</div>
+        <div class="meta">맥 쪽은 19fps · 인코딩 9ms · 손실 0으로 멀쩡했습니다. 폰의 디코딩 부담으로 추정합니다(폰 쪽 수치는 못 쟀습니다).</div>
+      </div>
+      <div class="col">
+        <div class="panel"><div class="doc"><h4>회의 메모</h4>1. 발표 순서 정하기<br>2. 자료 마감은 목요일 저녁<br>3. 다음 회의 장소 예약<br>4. 장보기 목록 정리</div></div>
+        <div class="tags"><span class="tag ok">1386 × 1836 · 75%</span><span class="tag ok">선명 · 부드러움</span></div>
+        <div class="card-title">75% · 기본값</div>
+        <div class="meta">A/B로 정했습니다. 가로는 1200 × 900. 연결 확정·방향 전환·해상도 변경 때마다 자동으로 다시 겁니다.</div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="card expl">
+        <div class="card-title" style="font-size:17px">재연결 없이 해상도를 올리는 방법</div>
+        <div>1. Deskreen을 <code>--remote-debugging-port</code>(127.0.0.1 전용)로 띄웁니다.</div>
+        <div>2. 헬퍼 렌더러에서 <code>Runtime.queryObjects</code>로 살아 있는 <code>RTCPeerConnection</code>을 찾습니다.</div>
+        <div>3. 송신 영상 트랙에 <code>applyConstraints({ width/height max })</code>를 겁니다.</div>
+        <div class="meta">비율은 <code>defaults write com.joonlab.DeskPadFold streamScale -float 0.75</code> 로 바꿀 수 있습니다.</div>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar"><span class="traffic"><i></i><i></i><i></i></span><span class="t-title">tools — zsh</span></div>
+        <div class="terminal-body"><span class="t-prompt">❯</span> <span class="t-b">python3 tools/webrtc_stats.py</span>
+<span class="t-dim">"trackSettings":</span> { "width": <span class="t-err">452</span>, "height": <span class="t-err">600</span> }
+
+<span class="t-prompt">❯</span> <span class="t-b">python3 tools/apply_constraints.py 1386 1836</span>
+<span class="t-dim">"width":</span> <span class="t-ok">1386</span>, <span class="t-dim">"height":</span> <span class="t-ok">1836</span>
+
+<span class="t-prompt">❯</span> <span class="t-b">python3 tools/webrtc_perf.py</span>   <span class="t-dim"># 100% 때 측정</span>
+1848x2448  fps=<span class="t-ok">19</span>  encode=<span class="t-ok">9ms</span>/frame  lost=<span class="t-ok">0</span>
+<span class="t-prompt">❯</span> <span class="t-cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
