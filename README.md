@@ -143,4 +143,4 @@ Claude Code와 함께 하룻밤(약 2시간) 동안 만들었습니다. 기억�
 
 ## 라이선스
 
-MIT. 원본 DeskPad의 저작권(Copyright (c) 2022 Bastian Andelefski)과 제 변경분의 저작권(Copyright (c) 2026 PARK JOON)을 [LICENSE](LICENSE)에 함께 적었습니다. 원본 라이선스 전문은 [LICENSE.upstream.md](LICENSE.upstream.md)에 그대로 두었습니다. 앱 아이콘(`DeskPad/Assets.xcassets`, `Icon/`)은 원본 DeskPad의 것입니다.
+MIT. 원본 DeskPad의 저작권(Copyright (c) 2022 Bastian Andelefski)과 제 변경분의 저작권(Copyright (c) 2026 PARK JOON)을 [LICENSE](LICENSE)에 함께 적었습니다. 원본 라이선스 전문은 [LICENSE.upstream.md](LICENSE.upstream.md)에 그대로 두었습니다. 앱 아이콘(`DeskPad/Assets.xcassets`)과 Raycast 확장 아이콘(`raycast/assets/icon.png`)은 원본 DeskPad의 것입니다.
