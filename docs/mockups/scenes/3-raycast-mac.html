@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="shot" content="w=1800,h=1103,scale=1">
+<title>장면 3 · 맥 화면 — Raycast 상태 화면</title>
+<link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
+<script src="https://mockup-kit.invalid/kit.js"></script>
+<style>
+  body { background: #000; }
+  .desk { zoom: 2.25; width: 800px; height: 490px; position: relative; overflow: hidden;
+    background: radial-gradient(120% 90% at 20% 10%, #D5DEEA 0%, #9DB0C8 50%, #6F83A0 100%); }
+  .mac-menubar { font-size: 14px; }
+  .launcher { position: absolute; left: 130px; width: 540px; top: 46px; border-radius: 16px; border: 1px solid var(--mac-border); background: var(--mac-menu); box-shadow: var(--shadow-float); overflow: hidden; color: var(--mac-text); }
+  .l-search { height: 52px; padding: 0 18px; display: flex; align-items: center; gap: 10px; font-size: 19px; border-bottom: 1px solid var(--mac-border); }
+  .l-sec { padding: 9px 18px 4px; font-size: 13px; font-weight: 600; color: var(--mac-dim); }
+  .l-item { margin: 0 8px; height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; gap: 12px; font-size: 16px; white-space: nowrap; }
+  .l-item .ic { width: 28px; height: 28px; border-radius: 7px; background: #2F3A4E; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; flex: none; }
+  .l-item .s { color: var(--mac-dim); font-size: 14px; }
+  .l-item .k { margin-left: auto; color: var(--mac-dim); font-size: 14px; }
+  .l-item.on { background: rgba(0,0,0,.08); }
+  .l-foot { height: 38px; margin-top: 6px; padding: 0 16px; border-top: 1px solid var(--mac-border); display: flex; align-items: center; font-size: 13px; color: var(--mac-dim); }
+  .l-foot .r { margin-left: auto; color: var(--mac-text); }
+</style></head><body>
+<div class="desk">
+  <div class="mac-menubar">
+    <span class="app-name">메시지</span><span>파일</span><span>편집</span><span>보기</span>
+    <div class="extras">
+      <span class="extra active"><i data-icon="smartphone"></i></span>
+      <span class="extra"><i data-icon="wifi"></i></span>
+      <span class="extra"><i data-icon="battery"></i></span>
+      <span class="clock">9월 28일 (일) 오후 2:32</span>
+    </div>
+  </div>
+  <div class="launcher">
+    <div class="l-search"><i data-icon="chevron-left"></i>DeskPad Fold</div>
+    <div class="l-sec">상태</div>
+    <div class="l-item"><span class="ic" style="background:#1E8E5A"><i data-icon="smartphone"></i></span>연결됨<span class="s">Android 브라우저</span><span class="k">세로</span></div>
+    <div class="l-item"><span class="ic"><i data-icon="link"></i></span>폰 다시 연결<span class="s">새 링크 + 자동 수락</span></div>
+    <div class="l-item"><span class="ic"><i data-icon="rotate"></i></span>가로로 전환<span class="s">연결 유지</span></div>
+    <div class="l-sec">해상도</div>
+    <div class="l-item on"><span class="ic"><i data-icon="check"></i></span>924 × 1224 선명 · 폴드 1:1</div>
+    <div class="l-item"><span class="ic" style="background:#8A93A3"><i data-icon="monitor"></i></span>768 × 1024 선명 · 폴드 비율</div>
+    <div class="l-foot">DeskPad Fold<span class="r">실행 ↵</span></div>
+  </div>
+</div>
+</body></html>

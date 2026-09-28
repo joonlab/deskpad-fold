@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="shot" content="w=1602,h=1800,scale=1">
+<title>장면 2 · 맥 화면 오른쪽 — Raycast로 가로 전환</title>
+<link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
+<script src="https://mockup-kit.invalid/kit.js"></script>
+<style>
+  body { background: #000; }
+  .desk { zoom: 3; width: 534px; height: 600px; position: relative; overflow: hidden;
+    background: radial-gradient(120% 90% at 20% 10%, #D5DEEA 0%, #9DB0C8 50%, #6F83A0 100%); }
+  .mac-menubar { font-size: 15px; }
+  .launcher { position: absolute; left: 16px; right: 22px; top: 70px; border-radius: 16px; border: 1px solid var(--mac-border); background: var(--mac-menu); box-shadow: var(--shadow-float); overflow: hidden; color: var(--mac-text); }
+  .l-search { height: 62px; padding: 0 18px; display: flex; align-items: center; gap: 12px; font-size: 23px; border-bottom: 1px solid var(--mac-border); }
+  .l-search .caret { width: 2px; height: 26px; background: var(--mac-hl); margin-left: -8px; }
+  .l-sec { padding: 12px 18px 6px; font-size: 14px; font-weight: 600; color: var(--mac-dim); }
+  .l-item { margin: 0 8px; height: 54px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; gap: 12px; font-size: 18px; white-space: nowrap; }
+  .l-item .ic { width: 32px; height: 32px; border-radius: 8px; background: #2F3A4E; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; flex: none; }
+  .l-item.on { background: rgba(0,0,0,.08); }
+  .l-foot { height: 46px; margin-top: 10px; padding: 0 16px; border-top: 1px solid var(--mac-border); display: flex; align-items: center; font-size: 15px; color: var(--mac-dim); }
+  .l-foot .r { margin-left: auto; color: var(--mac-text); }
+  .hud { position: absolute; left: 50%; transform: translateX(-50%); top: 420px; padding: 14px 22px; border-radius: 14px; background: rgba(30,30,32,.9); color: #fff; font-size: 19px; display: flex; gap: 10px; align-items: center; white-space: nowrap; }
+</style></head><body>
+<div class="desk">
+  <div class="mac-menubar">
+    <span>윈도우</span><span>도움말</span>
+    <div class="extras">
+      <span class="extra active"><i data-icon="smartphone"></i></span>
+      <span class="extra"><i data-icon="wifi"></i></span>
+      <span class="extra"><i data-icon="battery"></i></span>
+      <span class="clock">오후 2:31</span>
+    </div>
+  </div>
+  <div class="launcher">
+    <div class="l-search"><i data-icon="search"></i>폴드<span class="caret"></span></div>
+    <div class="l-sec">명령</div>
+    <div class="l-item"><span class="ic"><i data-icon="monitor"></i></span>DeskPad Fold</div>
+    <div class="l-item"><span class="ic"><i data-icon="link"></i></span>DeskPad 폰 연결</div>
+    <div class="l-item on"><span class="ic"><i data-icon="rotate"></i></span>DeskPad 가로/세로 전환</div>
+    <div class="l-foot">검색 결과 3개<span class="r">열기 ↵</span></div>
+  </div>
+  <div class="hud"><i data-icon="rotate"></i>가로 · 800 × 600 선명</div>
+</div>
+</body></html>

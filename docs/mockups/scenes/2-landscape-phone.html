@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="shot" content="w=1800,h=1750,scale=1">
+<title>장면 2 · 폰 화면 — 가로 보조모니터에 주간 캘린더</title>
+<link rel="stylesheet" href="https://mockup-kit.invalid/kit.css">
+<script src="https://mockup-kit.invalid/kit.js"></script>
+<style>
+  .screen { zoom: 3; width: 600px; height: 583.3px; }
+  .vdesk { flex: 1; min-height: 0; position: relative; overflow: hidden;
+    background: linear-gradient(160deg, #3B4A63 0%, #5A6E8C 55%, #8A9BB5 100%); }
+  .vbar { height: 24px; padding: 0 10px; display: flex; align-items: center; gap: 12px; background: rgba(245,246,248,.9); color: #1D1D1F; font-size: 13px; white-space: nowrap; }
+  .vbar .r { margin-left: auto; }
+  .win { position: absolute; left: 10px; right: 10px; top: 34px; bottom: 12px; }
+  .win .mac-title { font-size: 13px; }
+  .win .mac-body { padding: 14px; }
+  .win h1 { margin: 0 0 8px; font-size: 22px; line-height: 28px; font-weight: 700; }
+  .cal { flex: 1; display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; font-size: 16px; }
+  .cal > div { border: 1px solid var(--mac-border); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+  .cal b { font-size: 17px; }
+  .ev { display: block; padding: 5px 7px; border-radius: 6px; background: #E3ECFB; color: #1F4FA8; font-size: 17px; line-height: 22px; }
+  .ev.g { background: #E2F4EA; color: #1C6B45; }
+  .ev .t { display: block; font-size: 14px; opacity: .8; }
+</style></head><body>
+<div class="screen">
+  <div class="status-bar" data-time="2:31"></div>
+  <div class="vdesk">
+    <div class="vbar"><b>캘린더</b><span>파일</span><span>편집</span><span>보기</span><span class="r">오후 2:31</span></div>
+    <div class="mac-window win">
+      <div class="mac-titlebar"><span class="traffic"><i></i><i></i><i></i></span><span class="mac-title">이번 주</span></div>
+      <div class="mac-body">
+        <h1>9월 29일 – 10월 3일</h1>
+        <div class="cal">
+          <div><b>월</b><span class="ev"><span class="t">10:00</span>주간 회의</span><span class="ev g"><span class="t">15:00</span>현장 조사</span></div>
+          <div><b>화</b><span class="ev g"><span class="t">19:00</span>운동</span><span class="ev"><span class="t">11:00</span>표 초안</span></div>
+          <div><b>수</b><span class="ev"><span class="t">12:30</span>민지 점심</span><span class="ev g"><span class="t">16:00</span>서준 통화</span></div>
+          <div><b>목</b><span class="ev"><span class="t">18:00</span>자료 마감</span><span class="ev g"><span class="t">20:00</span>리허설</span></div>
+          <div><b>금</b><span class="ev"><span class="t">14:00</span>발표</span><span class="ev g"><span class="t">18:30</span>저녁 약속</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-handle"></div>
+</div>
+</body></html>

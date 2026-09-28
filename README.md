@@ -20,6 +20,19 @@
 
 그래서 DeskPad를 포크해 메뉴바 앱으로 바꾸고, Deskreen CE를 대신 조종하게 했습니다.
 
+## 실제로 이렇게 씁니다
+
+![맥 메뉴바의 DeskPad Fold 메뉴에서 세로를 고른 모습과, 옆에 세운 폴드8에 긴 회의 메모 창이 떠 있는 책상](docs/images/scenes/1-portrait-monitor.jpg)
+맥 메뉴바의 DeskPad Fold에서 세로를 고르면 → 옆에 세운 폴드8이 세로 보조모니터가 되어 긴 문서를 한 화면에 띄워 둡니다.
+
+![Raycast에서 가로/세로 전환 명령을 실행하고, 폴드8 가로 화면에 주간 캘린더가 꽉 찬 모습](docs/images/scenes/2-landscape-raycast.jpg)
+폰을 가로로 돌려 세우고 Raycast에서 「DeskPad 가로/세로 전환」을 실행하면 → 연결이 끊기지 않은 채 가로 800 × 600 선명 화면으로 바뀝니다.
+
+![Raycast의 DeskPad Fold 상태 화면에서 해상도 924 × 1224를 고르고, 폴드8에 긴 대화창이 떠 있는 모습](docs/images/scenes/3-raycast-status.jpg)
+Raycast 상태 화면에서 연결·방향을 확인하고 해상도를 924 × 1224 선명(폴드 1:1)으로 고르면 → 폰에 띄운 긴 대화도 흐리지 않게 보입니다.
+
+책상 사진은 AI로 만든 배경이고, 화면은 설명용 목업을 합성했습니다.
+
 ## 스크린샷
 
 ![폴드8 펼침 화면이 맥의 세로 보조모니터가 되고, 맥 메뉴바에 DeskPad Fold 메뉴가 열린 구성](docs/images/01-hero.png)

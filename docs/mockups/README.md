@@ -9,3 +9,5 @@ node android-mac-lab/mockup-kit/shot.mjs --batch docs/mockups   # → docs/image
 ```
 
 킷 사용법: https://github.com/joonlab/android-mac-lab/tree/main/mockup-kit
+
+`scenes/` 는 책상 사진 합성용 화면(맥 `*-mac.html`, 폰 `*-phone.html`)입니다. 각 HTML 의 `<meta name="shot">` 크기로 렌더한 뒤, android-mac-lab 의 `scenes/compose.py put <배경> <출력> 0=맥.png 1=폰.png` 로 배경 사진에 원근 합성해 `docs/images/scenes/*.jpg` 를 만듭니다. 장면 1·3은 `B_open_portrait`, 장면 2는 `F_close_open_portrait` 배경을 씁니다.
