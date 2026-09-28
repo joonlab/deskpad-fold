@@ -47,7 +47,13 @@ Raycast 상태 화면에서 연결·방향을 확인하고 해상도를 924 × 1
 ![Raycast에서 「폴드」로 검색한 명령 3개와 상태 화면](docs/images/04-raycast.png)
 화면은 설명용 목업입니다.
 
-<!-- VIDEO -->
+<!-- VIDEO:START -->
+### 홍보 영상
+
+[![홍보 영상 미리보기 — 누르면 전체 영상(가로 16:9, 72초)이 재생됩니다](docs/images/video-preview.webp)](https://pub-81d14e6ebfb841109968e9c0ee057d1b.r2.dev/android-mac-lab/videos/deskpad-fold/deskpad-fold_16x9.mp4)
+
+▶ [가로 16:9 · 72초](https://pub-81d14e6ebfb841109968e9c0ee057d1b.r2.dev/android-mac-lab/videos/deskpad-fold/deskpad-fold_16x9.mp4) · ▶ [세로 9:16 · 63초](https://pub-81d14e6ebfb841109968e9c0ee057d1b.r2.dev/android-mac-lab/videos/deskpad-fold/deskpad-fold_9x16.mp4) — 영상 속 화면은 설명용 목업이고, 책상 사진은 AI로 만든 배경입니다.
+<!-- VIDEO:END -->
 
 ## 기능
 
